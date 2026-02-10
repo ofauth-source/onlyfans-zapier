@@ -27,20 +27,6 @@ module.exports = {
   operation: {
     inputFields: [
     {
-      key: 'limit',
-      label: 'Limit',
-      type: 'integer',
-      required: false,
-      helpText: 'Number of items to return (1-20, default: 10)',
-    },
-    {
-      key: 'offset',
-      label: 'Offset',
-      type: 'integer',
-      required: false,
-      helpText: 'Number of items to skip (default: 0)',
-    },
-    {
       key: 'startDate',
       label: 'Start Date',
       type: 'string',
@@ -53,6 +39,13 @@ module.exports = {
       type: 'string',
       required: false,
       helpText: 'End of date range (ISO 8601)',
+    },
+    {
+      key: 'marker',
+      label: 'Marker',
+      type: 'string',
+      required: false,
+      helpText: 'Pagination marker from previous response',
     }
     ],
     perform,
