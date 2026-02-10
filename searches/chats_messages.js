@@ -49,6 +49,20 @@ module.exports = {
       type: 'string',
       required: false,
       helpText: 'Search/filter text',
+    },
+    {
+      key: 'id',
+      label: 'Id',
+      type: 'string',
+      required: false,
+      helpText: 'ID of the last message from previous page. Used for cursor pagination.',
+    },
+    {
+      key: 'firstId',
+      label: 'First Id',
+      type: 'string',
+      required: false,
+      helpText: 'Include this message ID as the first message in the results. Used to retrieve messages from e.g. the Search Chat Messages endpoint IDs.',
     }
     ],
     perform,
