@@ -18,7 +18,7 @@ const perform = async (z, bundle) => {
   }
   
   const response = await z.request({
-    url: 'https://api-next.ofauth.com/v2/link/init',
+    url: 'https://api.ofauth.com/v2/link/init',
     method: 'POST',
     headers: {
       apiKey: bundle.authData.apiKey,
@@ -41,6 +41,20 @@ module.exports = {
   operation: {
     inputFields: [
     {
+      key: 'body_clientAppId',
+      label: 'Client App Id',
+      type: 'string',
+      required: false,
+      helpText: 'Your client app ID (e.g., app_abc123). If omitted, uses the first matching client app.',
+    },
+    {
+      key: 'body_redirectUrl',
+      label: 'Redirect Url',
+      type: 'string',
+      required: false,
+      helpText: 'URL to redirect to after completion. Must be in your client app\'s allowed redirect URIs.',
+    },
+    {
       key: 'body_clientReferenceId',
       label: 'Client Reference Id',
       type: 'string',
@@ -60,13 +74,6 @@ module.exports = {
       type: 'text',
       required: false,
       helpText: 'geolocation',
-    },
-    {
-      key: 'body_redirectUrl',
-      label: 'Redirect Url',
-      type: 'string',
-      required: false,
-      helpText: 'URL to redirect to after completion. If omitted, uses first allowed redirect URI.',
     }
     ],
     perform,

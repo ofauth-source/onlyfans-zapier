@@ -18,7 +18,7 @@ const perform = async (z, bundle) => {
   }
   
   const response = await z.request({
-    url: 'https://api-next.ofauth.com/v2/access/promotions',
+    url: 'https://api.ofauth.com/v2/access/promotions',
     method: 'POST',
     headers: {
       apiKey: bundle.authData.apiKey,
@@ -48,18 +48,18 @@ module.exports = {
       helpText: 'Discount percentage to offer',
     },
     {
-      key: 'body_finishDays',
-      label: 'Finish Days',
-      type: 'integer',
-      required: true,
-      helpText: 'Days until promotion ends',
-    },
-    {
       key: 'body_message',
       label: 'Message',
       type: 'string',
       required: true,
       helpText: 'Promotion message',
+    },
+    {
+      key: 'body_finishDays',
+      label: 'Finish Days',
+      type: 'integer',
+      required: true,
+      helpText: 'Days until promotion ends',
     },
     {
       key: 'body_subscribeCounts',

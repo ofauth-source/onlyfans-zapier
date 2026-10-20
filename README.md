@@ -200,7 +200,7 @@ module.exports = {
     perform: async (z, bundle) => {
       const response = await z.request({
         method: 'POST',
-        url: 'https://api-next.ofauth.com/v2/access/example',
+        url: 'https://api.ofauth.com/v2/access/example',
         headers: { 'x-connection-id': bundle.inputData.connectionId },
         body: { name: bundle.inputData.name },
       });

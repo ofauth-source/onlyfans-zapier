@@ -1,6 +1,6 @@
 const perform = async (z, bundle) => {
   const response = await z.request({
-    url: `https://api-next.ofauth.com/v2/account/connections/${bundle.inputData.connectionId}/settings`,
+    url: `https://api.ofauth.com/v2/account/connections/${bundle.inputData.connectionId}/settings`,
     method: 'GET',
     headers: {
       apiKey: bundle.authData.apiKey,

@@ -18,7 +18,7 @@ const perform = async (z, bundle) => {
   }
   
   const response = await z.request({
-    url: 'https://api-next.ofauth.com/v2/account/connections/{connectionId}/invalidate',
+    url: 'https://api.ofauth.com/v2/account/connections/{connectionId}/invalidate',
     method: 'POST',
     headers: {
       apiKey: bundle.authData.apiKey,
