@@ -5,7 +5,7 @@ const perform = async (z, bundle) => {
   }
   
   const response = await z.request({
-    url: 'https://api-next.ofauth.com/sign',
+    url: 'https://api.ofauth.com/sign',
     method: 'POST',
     headers: {
       apiKey: bundle.authData.apiKey,

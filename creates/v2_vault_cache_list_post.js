@@ -18,7 +18,7 @@ const perform = async (z, bundle) => {
   }
   
   const response = await z.request({
-    url: 'https://api-next.ofauth.com/v2/vault/cache/list/:listId',
+    url: 'https://api.ofauth.com/v2/vault/cache/list/:listId',
     method: 'POST',
     headers: {
       apiKey: bundle.authData.apiKey,

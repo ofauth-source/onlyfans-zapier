@@ -1,6 +1,6 @@
 const perform = async (z, bundle) => {
   const response = await z.request({
-    url: `https://api-next.ofauth.com/v2/access/promotions/trial-links/${bundle.inputData.trialLinkId}`,
+    url: `https://api.ofauth.com/v2/access/promotions/trial-links/${bundle.inputData.trialLinkId}`,
     method: 'GET',
     headers: {
       apiKey: bundle.authData.apiKey,

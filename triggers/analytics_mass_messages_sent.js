@@ -1,6 +1,6 @@
 const perform = async (z, bundle) => {
   const response = await z.request({
-    url: 'https://api-next.ofauth.com/v2/access/analytics/mass-messages/purchased',
+    url: 'https://api.ofauth.com/v2/access/analytics/mass-messages/sent',
     method: 'GET',
     headers: {
       apiKey: bundle.authData.apiKey,
@@ -18,27 +18,34 @@ const perform = async (z, bundle) => {
 };
 
 module.exports = {
-  key: 'analytics_mass_messages_purchased',
-  noun: 'Purchased',
+  key: 'analytics_mass_messages_sent',
+  noun: 'Sent',
   display: {
-    label: 'Mass messages purchased',
-    description: 'Get list of mass messages that were purchased **Permission Required:** `analytics:read`',
+    label: 'Sent mass messages',
+    description: 'Get stats for sent mass messages **Permission Required:** `analytics:read`',
   },
   operation: {
     inputFields: [
+    {
+      key: 'startDate',
+      label: 'Start Date',
+      type: 'string',
+      required: false,
+      helpText: 'Start of date range (ISO 8601)',
+    },
+    {
+      key: 'endDate',
+      label: 'End Date',
+      type: 'string',
+      required: false,
+      helpText: 'End of date range (ISO 8601)',
+    },
     {
       key: 'limit',
       label: 'Limit',
       type: 'integer',
       required: false,
-      helpText: 'Number of items to return (1-100, default: 20)',
-    },
-    {
-      key: 'offset',
-      label: 'Offset',
-      type: 'integer',
-      required: false,
-      helpText: 'Number of items to skip (default: 0)',
+      helpText: 'Max number of items to return',
     }
     ],
     perform,
